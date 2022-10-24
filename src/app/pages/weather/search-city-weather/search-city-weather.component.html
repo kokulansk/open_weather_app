@@ -1,1 +1,28 @@
-<p>search-city-weather works!</p>
+<p>
+    <mat-form-field>
+        <mat-select  [formControl]="citiesCtrl" placeholder="Cities" #singleSelect>
+            <mat-option>
+                <ngx-mat-select-search  [formControl]="cityFilterCtrl"></ngx-mat-select-search>
+            </mat-option>
+
+            <mat-option *ngFor="let city of filteredCities" [value]="city">
+                {{city.name}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+    <button (click)="getWeather()">Get weather</button>
+</p>
+<p>
+    Selected City: {{citiesCtrl.value?.name}}
+</p>
+<div *ngIf="weather.temp">
+    <div>
+        Temperature: {{weather.temp}}
+    </div>
+    <div>
+        Pressure: {{weather.pressure}}
+    </div>
+    <div>
+        Humanity: {{weather.humidity}}
+    </div>
+</div>

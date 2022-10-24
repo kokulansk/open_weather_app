@@ -5,7 +5,6 @@ import { WeatherRoutingModule } from './weather-routing.module';
 import { AngularMaterialModule } from '../../shared/angular-material/angular-material.module';
 
 
-
 @NgModule({
   declarations: [
     SearchCityWeatherComponent
